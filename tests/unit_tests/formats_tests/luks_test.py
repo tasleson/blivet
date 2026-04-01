@@ -158,6 +158,8 @@ class LUKSNodevTestCase(unittest.TestCase):
         self.assertEqual(fmt._header_size, Size("16 MiB"))
         self.assertEqual(fmt._min_size, Size("16 MiB"))
 
+    @unittest.skipUnless(hasattr(blockdev, "CryptoLUKSHWEncryptionType"),
+                         "libblockdev OPAL support not available")
     def test_luks_opal(self):
         fmt = LUKS(exists=True)
         self.assertFalse(fmt.is_opal)

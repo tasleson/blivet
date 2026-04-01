@@ -47,8 +47,11 @@ LUKS_VERSIONS = {"luks1": BlockDev.CryptoLUKSVersion.LUKS1,
                  "luks2": BlockDev.CryptoLUKSVersion.LUKS2}
 DEFAULT_LUKS_VERSION = "luks2"
 
-OPAL_TYPES = {"luks2-hw-opal": BlockDev.CryptoLUKSHWEncryptionType.OPAL_HW_AND_SW,
-              "luks2-hw-opal-only": BlockDev.CryptoLUKSHWEncryptionType.OPAL_HW_ONLY}
+try:
+    OPAL_TYPES = {"luks2-hw-opal": BlockDev.CryptoLUKSHWEncryptionType.OPAL_HW_AND_SW,
+                  "luks2-hw-opal-only": BlockDev.CryptoLUKSHWEncryptionType.OPAL_HW_ONLY}
+except AttributeError:
+    OPAL_TYPES = {}
 
 DEFAULT_INTEGRITY_ALGORITHM = "crc32c"
 

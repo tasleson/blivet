@@ -187,6 +187,7 @@
       - gettext
       - libblockdev-tools
       - open-iscsi
+      - parted
       - pycodestyle
       - python3-coverage
       - python3-dasbus
