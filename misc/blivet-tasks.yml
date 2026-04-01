@@ -172,6 +172,7 @@
       - automake
       - autopoint
       - bison
+      - git
       - libtool
       - pkg-config
       - dosfstools
